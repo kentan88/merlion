@@ -1,9 +1,17 @@
 GEM
+  remote: https://rubygems.org/
   specs:
+    haml (4.0.5)
+      tilt
     rack (1.6.0.beta)
+    sequel (4.17.0)
+    tilt (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
   rack
+  sequel
+  tilt
