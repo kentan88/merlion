@@ -1,0 +1,9 @@
+GEM
+  specs:
+    rack (1.6.0.beta)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack
