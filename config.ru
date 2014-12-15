@@ -3,7 +3,6 @@ Bundler.require
 
 require 'tilt/haml'
 
-
 DB = Sequel.sqlite
 
 DB.create_table :items do
@@ -11,7 +10,6 @@ DB.create_table :items do
   String :name
   Float :price
 end
-
 
 require File.join(File.dirname(__FILE__), 'lib', 'merlion')
 Application = Merlion::Application.new

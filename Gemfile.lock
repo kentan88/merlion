@@ -7,6 +7,8 @@ GEM
     sequel (4.17.0)
     sqlite3 (1.3.10)
     tilt (1.4.1)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -17,3 +19,4 @@ DEPENDENCIES
   sequel
   sqlite3
   tilt
+  warden
