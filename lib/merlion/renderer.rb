@@ -7,16 +7,18 @@ class Merlion::Renderer
 
   def render(path, opts = {})
     Merlion::Response.new.tap do |response|
-      response.body = render_layout.render(self) { render_template(path).render(self) }
+      response.body = render_layout(path)
       response.status_code = 200
     end
   end
 
-  def render_layout
-    Tilt::HamlTemplate.new(File.join('app', 'views', 'layouts', 'application.html.haml'))
+  def render_layout(path)
+    Tilt::HamlTemplate.new(File.join('app', 'views', 'layouts', 'application.html.haml')).render(self) do
+      render_template(path)
+    end
   end
 
   def render_template(path)
-    Tilt::HamlTemplate.new(File.join('app', 'views') + '/' + path + '.html.haml')
+    Tilt::HamlTemplate.new(File.join('app', 'views') + '/' + path + '.html.haml').render(self)
   end
 end
