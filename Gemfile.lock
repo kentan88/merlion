@@ -5,6 +5,7 @@ GEM
       tilt
     rack (1.6.0.beta)
     sequel (4.17.0)
+    sqlite3 (1.3.10)
     tilt (1.4.1)
 
 PLATFORMS
@@ -14,4 +15,5 @@ DEPENDENCIES
   haml
   rack
   sequel
+  sqlite3
   tilt

@@ -3,10 +3,15 @@ Bundler.require
 
 require 'tilt/haml'
 
-# use Rack::Static,
-#   :urls => ["/images", "/js", "/css"],
-#   :root => "public",
-#   :index => 'index.html'
+
+DB = Sequel.sqlite
+
+DB.create_table :items do
+  primary_key :id
+  String :name
+  Float :price
+end
+
 
 require File.join(File.dirname(__FILE__), 'lib', 'merlion')
 Application = Merlion::Application.new

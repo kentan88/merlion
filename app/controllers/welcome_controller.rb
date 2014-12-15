@@ -1,7 +1,11 @@
 class WelcomeController < Merlion::Renderer
     def index
     @name = "Ken Tan"
-    # @post = User.new.create(:post)
+    items = DB[:items]
+    items.insert(:name => 'abc', :price => rand * 100)
+    items.insert(:name => 'def', :price => rand * 100)
+    items.insert(:name => 'ghi', :price => rand * 100)
+    @items = items.count
     render 'welcome/index'
   end
 
