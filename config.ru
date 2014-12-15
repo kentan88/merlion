@@ -5,7 +5,7 @@ require 'tilt/haml'
 
 DB = Sequel.sqlite
 
-DB.create_table :items do
+DB.create_table :articles do
   primary_key :id
   String :name
   Float :price

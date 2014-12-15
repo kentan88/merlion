@@ -1,0 +1,10 @@
+%h1= @name
+%h2 There are #{@articles.count} items.
+
+%a{href: 'articles/new'} New Item
+
+%table.table.table-bordered
+  - @articles.each do |item|
+    %tr
+      %td= item[:name]
+      %td= item[:price]

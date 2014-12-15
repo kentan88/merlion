@@ -12,6 +12,9 @@ class Merlion::Renderer
     end
   end
 
+  def redirect_to(path)
+  end
+
   def render_layout(path)
     Tilt::HamlTemplate.new(File.join('app', 'views', 'layouts', 'application.html.haml')).render(self) do
       render_template(path)
