@@ -1,3 +1,9 @@
 %h1 New Item
 
 = Item.last.price
+
+
+%form{action: '/items/create', method: 'post'}
+  %input{type: 'text', name: 'item[name]'}
+  %input{type: 'text', name: 'item[price]'}
+  %input{type: 'submit'}

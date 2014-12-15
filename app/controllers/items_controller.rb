@@ -12,4 +12,8 @@ class ItemsController < Merlion::Renderer
     @item = Item[1]
     render 'items/new'
   end
+
+  def create
+    render 'items/index'
+  end
 end
