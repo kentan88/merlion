@@ -12,5 +12,7 @@ DB.create_table :items do
 end
 
 require File.join(File.dirname(__FILE__), 'lib', 'merlion')
+Dir[File.dirname(__FILE__) + '/app/models/*.rb'].each {|file| require file }
+
 Application = Merlion::Application.new
 run Merlion::Controller.new

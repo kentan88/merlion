@@ -9,6 +9,7 @@ class ItemsController < Merlion::Renderer
   end
 
   def new
+    @item = Item[1]
     render 'items/new'
   end
 end
