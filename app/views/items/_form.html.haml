@@ -1,7 +1,6 @@
 %h1 New Item
 
-= Item.last.price
-
+-# = Item.last.price
 
 %form{action: '/items/create', method: 'post'}
   %input{type: 'text', name: 'item[name]'}

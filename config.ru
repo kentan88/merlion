@@ -16,3 +16,5 @@ Dir[File.dirname(__FILE__) + '/app/models/*.rb'].each {|file| require file }
 
 Application = Merlion::Application.new
 run Merlion::Controller.new
+
+# find merlion -name '*' | xargs wc -l
