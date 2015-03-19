@@ -13,6 +13,11 @@ class Merlion::Renderer
   end
 
   def redirect_to(path)
+    Merlion::Response.new.tap do |response|
+      response.body = "redirecting..."
+      response.headers['location'] = path
+      response.status_code = 301
+    end
   end
 
   def render_layout(path)

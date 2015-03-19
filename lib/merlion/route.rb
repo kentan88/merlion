@@ -13,6 +13,8 @@ class Merlion::Route
   end
 
   def execute(env)
+    puts instance_method.to_sym
+    puts klass
     klass.new(env).send(instance_method.to_sym)
   end
 

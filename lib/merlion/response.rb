@@ -1,5 +1,5 @@
 class Merlion::Response
-  attr_accessor :status_code, :headers, :body
+  attr_accessor :status_code, :headers, :body, :location
 
   def initialize
     @headers = {}
