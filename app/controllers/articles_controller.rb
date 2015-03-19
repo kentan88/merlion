@@ -11,7 +11,12 @@ class ArticlesController < Merlion::Renderer
     render 'articles/new'
   end
 
+  def show
+    render 'articles/show'
+  end
+
   def create
-    redirect_to 'articles/index'
+    article_id = DB[:articles].insert(:name => 'abc', :price => rand * 100)
+    redirect_to article_id.to_s
   end
 end

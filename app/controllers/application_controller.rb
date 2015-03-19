@@ -1,4 +1,4 @@
 class ApplicationController < Merlion::Renderer
-    def index
-    end
+  def index
+  end
 end

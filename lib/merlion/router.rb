@@ -21,6 +21,9 @@ class Merlion::Router
     path = env["PATH_INFO"]
     method = env["REQUEST_METHOD"].downcase.to_sym
     route_array = routes[method].detect do |route|
+      # when route.first has :, it is a regex
+      # wip
+      
       case route.first
       when String
         path == route.first
