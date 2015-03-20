@@ -13,7 +13,8 @@ class Merlion::Route
   end
 
   def execute(env)
-    klass.new(env).send(instance_method.to_sym)
+    klass.new.send(instance_method.to_sym)
+    # klass.new(env).send(instance_method.to_sym)
   end
 
   def handle_requires

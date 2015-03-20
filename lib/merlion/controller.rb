@@ -1,4 +1,6 @@
 class Merlion::Controller
+  include Merlion::Renderer
+
   def initialize
     handle_requires
   end

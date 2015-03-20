@@ -1,4 +1,4 @@
-class ApplicationController < Merlion::Renderer
+class ApplicationController < Merlion::Controller
   def index
   end
 end
