@@ -2,12 +2,12 @@ module Merlion
   class Application
     attr_reader :router
     def initialize
-      declare_global_variables
+      init_global_var
       handle_requires
       instantiate_router
     end
 
-    def declare_global_variables
+    def init_global_var
       $AUTOLOAD_PATH = []
     end
 
