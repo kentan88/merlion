@@ -1,15 +1,8 @@
-class Object
-  def self.const_missing(name)
-    Object.const_set(name.to_s.capitalize, Module.new)
-  end
+['extensions/object.rb', 'application.rb', 'router.rb', 'route.rb',
+'renderer.rb', 'controller.rb', 'response.rb'].each do |filename|
+  # require_relative '../lib/merlion/' + filename
+  require File.join(File.dirname(__FILE__), 'merlion', filename)
 end
-
-require File.join(File.dirname(__FILE__), 'merlion', 'application')
-require File.join(File.dirname(__FILE__), 'merlion', 'router')
-require File.join(File.dirname(__FILE__), 'merlion', 'route')
-require File.join(File.dirname(__FILE__), 'merlion', 'renderer')
-require File.join(File.dirname(__FILE__), 'merlion', 'controller')
-require File.join(File.dirname(__FILE__), 'merlion', 'response')
 
 module Merlion
 end
