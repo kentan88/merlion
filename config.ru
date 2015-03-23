@@ -1,6 +1,5 @@
 require 'bundler'
 Bundler.require
-require 'tilt/haml'
 
 DB = Sequel.sqlite
 DB.create_table :articles do
