@@ -15,7 +15,6 @@ module Merlion
 
     def redirect_to(path)
       Merlion::Response.new.tap do |response|
-        response.body = "redirecting..."
         response.headers['location'] = path
         response.status_code = 301
       end
@@ -28,8 +27,7 @@ module Merlion
     end
 
     def render_template(path)
-      Tilt::HamlTemplate.new(File.join('app', 'views') + '/' + path + '.html.haml').render(self)
+      Tilt::HamlTemplate.new(File.join('app', 'views', "#{path}.html.haml")).render(self)
     end
   end
-
 end
