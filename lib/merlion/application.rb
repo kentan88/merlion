@@ -21,7 +21,7 @@ module Merlion
         Dir[load_path + "/**/*.rb"].each do |file|
           pathname = file.gsub(load_path, '')
 
-          set_constant(pathname)
+          # set_constant(pathname)
 
           require file if File.extname(file) == '.rb'
         end
