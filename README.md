@@ -19,3 +19,6 @@ Very similar to rails.
 3. Establish database connection.
 4. Merlion gets loaded.
 5. Application gets instantiated and bootstrapping begins.
+
+
+##### wc -l `find /Users/kentan/workspace/merlion/lib -type f` | tail -1
