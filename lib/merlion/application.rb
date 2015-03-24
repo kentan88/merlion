@@ -8,19 +8,29 @@ module Merlion
     end
 
     def init_global_var
+      $ROOT_PATH = Dir.pwd
       $AUTOLOAD_PATH = []
     end
 
     def handle_requires
       ["/app/config/initializers", "/app/models"].each do |dir|
-        $AUTOLOAD_PATH.unshift(Dir.pwd + dir)
+        $AUTOLOAD_PATH.unshift($ROOT_PATH + dir)
       end
 
       $AUTOLOAD_PATH.each do |load_path|
-        Dir[load_path + "/**/*"].each do |file|
+        Dir[load_path + "/**/*.rb"].each do |file|
+          pathname = file.gsub(load_path, '')
+
+          set_constant(pathname)
+
           require file if File.extname(file) == '.rb'
         end
       end
+    end
+
+    def set_constant(string)
+      #  load all the string according to their namespaces!
+      # Object.const_missing(string)
     end
 
     def instantiate_router
